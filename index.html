@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList / Vue</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="contanier margin-x" id="app">
+        <h1>Lista de tareas</h1>
+        <form class="mt-5">
+            <div class="form-group ">
+                <input type="text" class="form-control" placeholder="Nueva tarea" v-model="nuevaTarea" required>
+            </div>
+            <div class="form-group mt-4">
+                <input type="text" class="form-control" placeholder="Descripcion" v-model="ndescripcion" required>
+            </div>
+        </form>
+        <button class="btn btn-primary mt-4" id="btnagregar" @click="agregarTarea">Agregar  <i class="fas fa-plus-circle"></i></button>
+
+        <div class="mt-5" id="listadoDeTareasp">
+            <h3>Tareas pendientes</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Completar</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="tarea of tareasPendientes">
+                        <th scope="row"></th>
+                        <td>{{tarea.nombre}}</td>
+                        <td>{{tarea.descripcion}}</td>
+                        <td><button class="btns" @click="tareaTerminada(tarea)"><i class="fas fa-check "></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-5" id="listadoDeTareas">
+            <h3>Tareas realizadas</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="tarea of tareasTerminadas">
+                        <th scope="row"></th>
+                        <td>{{tarea.nombre}}</td>
+                        <td>{{tarea.descripcion}}</td>
+                        <td><button class="btns"><i class="fas fa-minus-circle" @click="eliminarTarea(tarea)"></i></button></li>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://kit.fontawesome.com/20365871d0.js" crossorigin="anonymous"></script>
+    <script src="/mai.js"></script>
+</body>
+
+</html>

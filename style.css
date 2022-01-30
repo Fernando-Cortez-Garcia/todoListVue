@@ -1,0 +1,51 @@
+h1,
+h3 {
+    text-align: center;
+}
+
+body {
+    background-color: whitesmoke
+}
+
+form {
+    width: 50%;
+    box-shadow: 4px 4px 4px #888888;
+    margin: 0 auto;
+}
+
+#listadoDeTareasp {
+    width: 50%;
+    box-shadow: 4px 4px 4px #888888;
+    margin: 0 auto;
+}
+
+#listadoDeTareas {
+    width: 50%;
+    box-shadow: 4px 4px 4px #888888;
+    margin: 0 auto;
+    ;
+}
+
+#btnagregar {
+    margin-left: 45%;
+    margin-bottom: 1em;
+}
+
+.botones {
+    display: inline-flex;
+}
+
+.item {
+    text-align: center;
+}
+
+.btns {
+    border-radius: 50%;
+    position: relative;
+    margin-left: 10px;
+    border: none;
+}
+
+.btns:hover {
+    color: #888888;
+}
